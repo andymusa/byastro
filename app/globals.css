@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fff9f2;
+  color: #5c4a3d;
+}
+
+/* Soft paw-print dotted texture used on section breaks */
+.paw-bg {
+  background-image: radial-gradient(
+    rgba(140, 106, 88, 0.1) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 26px 26px;
+}
+
+/* warm grain-ish wash for cozy sections */
+.cozy-wash {
+  background-image: radial-gradient(
+      circle at 20% 20%,
+      rgba(217, 137, 106, 0.08),
+      transparent 45%
+    ),
+    radial-gradient(circle at 85% 0%, rgba(175, 220, 238, 0.12), transparent 40%);
+}
+
+/* hide scrollbar for the featured carousel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Scroll paw-trail: each paw fades + lifts in when revealed */
+.scroll-paw {
+  opacity: 0;
+  transform: translateY(14px) scale(0.7) rotate(var(--rot, 0deg));
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.scroll-paw.is-in {
+  opacity: 0.55;
+  transform: translateY(0) scale(1) rotate(var(--rot, 0deg));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-drift,
+  .animate-sway,
+  .animate-peek,
+  .animate-bob {
+    animation: none !important;
+  }
+}
+
+@layer components {
+  .btn-terra {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-sky-deep px-7 py-3.5 text-base font-bold text-white shadow-cozy transition hover:bg-sky-baby hover:text-ink active:scale-95;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-sky-deep px-6 py-3 font-semibold text-white shadow-cozy transition hover:bg-sky-baby hover:text-ink active:scale-95;
+  }
+  .btn-sun {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-butter-300 px-6 py-3 font-semibold text-ink shadow-soft transition hover:bg-butter-200 active:scale-95;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-sky-baby bg-white/70 px-6 py-3 font-semibold text-ink transition hover:border-sky-deep hover:bg-white active:scale-95;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full bg-cream-200 px-3 py-1 text-sm font-medium text-brown-500;
+  }
+  .card {
+    @apply rounded-4xl bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-cozy;
+  }
+}
