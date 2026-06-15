@@ -188,22 +188,6 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="mt-3 text-sm text-ink/70">{s.blurb}</p>
-                <div className="mt-4 flex flex-wrap items-center gap-2">
-                  <a
-                    href={s.instagram}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full bg-butter-100 px-3.5 py-1.5 text-sm font-semibold text-brown-600 transition hover:bg-butter-200"
-                  >
-                    <span>📸</span> Instagram
-                  </a>
-                  <a
-                    href={`tel:${s.phone}`}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-sky-soft px-3.5 py-1.5 text-sm font-semibold text-sky-deep transition hover:bg-sky-baby"
-                  >
-                    <span>📞</span> {s.phoneLabel}
-                  </a>
-                </div>
               </div>
             ))}
           </div>
