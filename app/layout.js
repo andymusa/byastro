@@ -18,7 +18,7 @@ const hand = Baloo_2({
 });
 
 export const metadata = {
-  title: "ByAstro — Every dog deserves a couch to nap on",
+  title: "ByAstro — Rescue dogs across the UAE looking for a home",
   description:
     "A centralized dog adoption & fostering platform for shelter dogs across the UAE. Browse, connect, and bring home your new best friend — built in memory of Astro.",
 };
