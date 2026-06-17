@@ -145,6 +145,38 @@ export default function ChatWidget() {
                 ))}
               </div>
             )}
+
+            {/* Follow-up suggestions after each answer (questions not yet asked) */}
+            {messages.length > 1 &&
+              messages[messages.length - 1].from === "astro" &&
+              (() => {
+                const asked = new Set(
+                  messages
+                    .filter((m) => m.from === "user")
+                    .map((m) => m.text.toLowerCase().trim())
+                );
+                const followups = faqs
+                  .map((f) => f.question)
+                  .filter((q) => !asked.has(q.toLowerCase().trim()))
+                  .slice(0, 3);
+                if (!followups.length) return null;
+                return (
+                  <div className="space-y-2 pt-1">
+                    <p className="px-1 text-xs font-semibold uppercase tracking-wide text-sand-500">
+                      You could also ask
+                    </p>
+                    {followups.map((s) => (
+                      <button
+                        key={s}
+                        onClick={() => send(s)}
+                        className="block w-full rounded-2xl border border-cream-200 bg-white px-3 py-2 text-left text-sm text-ink/80 transition hover:border-sky-baby hover:bg-cream-100"
+                      >
+                        {s}
+                      </button>
+                    ))}
+                  </div>
+                );
+              })()}
           </div>
 
           {/* Input */}
