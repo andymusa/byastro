@@ -12,7 +12,7 @@ export default function Logo({ className = "", textClass = "text-3xl", tribute =
         </svg>
       </span>
       {tribute && (
-        <span className="mt-1 text-[0.7rem] font-semibold uppercase tracking-wide text-sand-500">
+        <span className="mt-1 text-[0.55rem] font-semibold uppercase tracking-wide text-sand-500">
           In memory of Astro
         </span>
       )}
