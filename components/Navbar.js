@@ -1,11 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Logo from "./Logo";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   const links = [
     { href: "/", label: "Home" },
@@ -17,7 +20,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-cream-200 bg-cream-50/85 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <Logo sketchClass="h-10 w-10" textClass="text-3xl" />
+        <Logo textClass="text-3xl" tribute={isHome} />
 
         <div className="hidden items-center gap-1 md:flex">
           {links.map((l) => (
