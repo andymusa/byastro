@@ -13,6 +13,7 @@ export default function Navbar() {
   const links = [
     { href: "/", label: "Home" },
     { href: "/dogs", label: "Browse Dogs" },
+    { href: "/about", label: "About" },
     { href: "/#shelters", label: "Shelters" },
     { href: "/#how", label: "How it works" },
   ];
