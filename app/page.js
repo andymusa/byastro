@@ -1,16 +1,10 @@
 import Link from "next/link";
-import { dogs, dogsByWaiting } from "@/data/dogs";
+import { dogsByWaiting } from "@/data/dogs";
 import { shelters, shelterById } from "@/data/shelters";
-import FeaturedCarousel from "@/components/FeaturedCarousel";
 import HeroScene from "@/components/HeroScene";
 import ScrollPaws from "@/components/ScrollPaws";
 import DogCard from "@/components/DogCard";
 import { Star, Paw, Heart, Clock } from "@/components/icons";
-
-const featured = dogs.slice(0, 8).map((dog) => ({
-  dog,
-  shelter: shelterById(dog.shelterId),
-}));
 
 const stillWaiting = dogsByWaiting.slice(0, 4);
 
@@ -122,25 +116,6 @@ export default function HomePage() {
               <p className="mt-2 text-sm text-ink/70">{s.text}</p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Featured dogs */}
-      <section className="bg-cream-100 py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="flex items-end justify-end gap-4">
-            <Link href="/dogs" className="hidden btn-sun sm:inline-flex">
-              See all dogs
-            </Link>
-          </div>
-          <div className="mt-8">
-            <FeaturedCarousel items={featured} />
-          </div>
-          <div className="mt-6 text-center sm:hidden">
-            <Link href="/dogs" className="btn-sun">
-              See all dogs
-            </Link>
-          </div>
         </div>
       </section>
 
