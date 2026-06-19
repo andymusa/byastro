@@ -18,6 +18,7 @@ export default function Footer() {
           <h4 className="font-hand text-lg font-bold text-ink">Explore</h4>
           <ul className="mt-3 space-y-2 text-sm text-ink/70">
             <li><Link href="/dogs" className="hover:text-sky-deep">Browse all dogs</Link></li>
+            <li><Link href="/about" className="hover:text-sky-deep">About ByAstro</Link></li>
             <li><Link href="/#how" className="hover:text-sky-deep">How it works</Link></li>
             <li><Link href="/#shelters" className="hover:text-sky-deep">Partner shelters</Link></li>
           </ul>
