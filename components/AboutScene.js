@@ -123,6 +123,19 @@ export default function AboutScene() {
         </g>
       </g>
 
+      {/* Astro, sitting in the middle of the meadow */}
+      <g clipPath="url(#scene-clip)">
+        <ellipse cx="500" cy="582" rx="115" ry="17" fill="#3F4A22" opacity="0.18" />
+        <image
+          href="/astro-cutout.png"
+          x="402"
+          y="322"
+          width="196"
+          height="268"
+          preserveAspectRatio="xMidYMax meet"
+        />
+      </g>
+
       {/* framing plants (drawn over the clipped scene edges) */}
       <g transform="translate(120 290)">
         <path d="M0 250 C-8 170 -4 90 6 16" fill="none" stroke="#5E6B36" strokeWidth="6" strokeLinecap="round" />
