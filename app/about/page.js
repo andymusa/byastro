@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Star, Paw, Heart } from "@/components/icons";
+import { Paw, Heart } from "@/components/icons";
+import AboutScene from "@/components/AboutScene";
 
 export const metadata = {
   title: "About ByAstro — Built in memory of Astro",
@@ -17,16 +18,31 @@ export default function AboutPage() {
       <div className="relative mx-auto max-w-3xl px-4 py-14 sm:px-6 md:py-20">
         {/* Header */}
         <div className="text-center animate-fade-up">
-          <span className="chip bg-white text-sky-deep">
-            <Paw className="h-3.5 w-3.5" /> About ByAstro
-          </span>
-          <h1 className="mt-4 font-hand text-4xl font-extrabold leading-[1.1] text-brown-600 sm:text-5xl">
-            More than a website. A place where rescue dogs are seen.
+          <p className="flex items-center justify-center gap-1.5 text-sm font-bold uppercase tracking-widest text-sky-deep">
+            In memory of Astro
+            <Heart className="h-4 w-4 text-sky-baby" filled />
+          </p>
+          <h1 className="mt-3 inline-flex items-start gap-2 font-hand text-5xl font-extrabold leading-[1.1] text-brown-600 sm:text-6xl">
+            About ByAstro
+            <Paw className="mt-2 h-7 w-7 text-sand-500" />
           </h1>
+          <svg viewBox="0 0 120 12" className="mx-auto mt-1 h-3 w-28 text-sky-deep" fill="none" aria-hidden="true">
+            <path d="M4 8C30 2 90 2 116 6" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+          </svg>
         </div>
 
+        {/* Scene */}
+        <div className="mt-8 animate-fade-up">
+          <AboutScene />
+        </div>
+
+        {/* Tagline */}
+        <h2 className="mt-10 text-center font-hand text-3xl font-extrabold text-brown-600 sm:text-4xl">
+          More than a website. A place where rescue dogs are seen.
+        </h2>
+
         {/* Mission */}
-        <div className="mt-12 space-y-5 text-lg leading-relaxed text-ink/80">
+        <div className="mt-8 space-y-5 text-lg leading-relaxed text-ink/80">
           <p>
             Finding a rescue dog in the UAE can be surprisingly difficult. Many
             incredible dogs are spread across different shelters, foster homes,
