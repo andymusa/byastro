@@ -123,32 +123,6 @@ export default function AboutScene() {
         </g>
       </g>
 
-      {/* Astro, sitting in the middle of the meadow */}
-      <g clipPath="url(#scene-clip)">
-        <ellipse cx="500" cy="582" rx="115" ry="17" fill="#3F4A22" opacity="0.18" />
-        <image
-          href="/astro-cutout.png"
-          x="402"
-          y="322"
-          width="196"
-          height="268"
-          preserveAspectRatio="xMidYMax meet"
-        />
-      </g>
-
-      {/* Astro standing on the right side of the meadow */}
-      <g clipPath="url(#scene-clip)">
-        <ellipse cx="752" cy="590" rx="86" ry="13" fill="#3F4A22" opacity="0.18" />
-        <image
-          href="/astro-right.png"
-          x="666"
-          y="427"
-          width="172"
-          height="165"
-          preserveAspectRatio="xMidYMax meet"
-        />
-      </g>
-
       {/* framing plants (drawn over the clipped scene edges) */}
       <g transform="translate(120 290)">
         <path d="M0 250 C-8 170 -4 90 6 16" fill="none" stroke="#5E6B36" strokeWidth="6" strokeLinecap="round" />
@@ -174,6 +148,19 @@ export default function AboutScene() {
         <g fill="#7E9450">
           <ellipse cx="-6" cy="6" rx="16" ry="9" transform="rotate(6 -6 6)" />
         </g>
+      </g>
+
+      {/* Astro standing at the right edge of the meadow */}
+      <g clipPath="url(#scene-clip)">
+        <ellipse cx="792" cy="600" rx="130" ry="16" fill="#3F4A22" opacity="0.18" />
+        <image
+          href="/astro-right.png"
+          x="638"
+          y="314"
+          width="308"
+          height="296"
+          preserveAspectRatio="xMidYMax meet"
+        />
       </g>
     </svg>
   );
