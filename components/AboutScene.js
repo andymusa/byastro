@@ -114,12 +114,12 @@ export default function AboutScene() {
 
       {/* Astro standing at the right edge of the meadow */}
       <g clipPath="url(#scene-clip)">
-        <ellipse cx="846" cy="348" rx="112" ry="12" fill="#3F4A22" opacity="0.18" />
+        <ellipse cx="862" cy="348" rx="108" ry="12" fill="#3F4A22" opacity="0.18" />
         <image
           href="/astro-right.png"
-          x="726"
+          x="752"
           y="150"
-          width="224"
+          width="216"
           height="200"
           preserveAspectRatio="xMaxYMax meet"
         />
