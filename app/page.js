@@ -1,12 +1,14 @@
 import Link from "next/link";
-import { dogsByWaiting } from "@/data/dogs";
+import { dogById } from "@/data/dogs";
 import { shelters, shelterById } from "@/data/shelters";
 import HeroScene from "@/components/HeroScene";
 import ScrollPaws from "@/components/ScrollPaws";
 import DogCard from "@/components/DogCard";
 import { Star, Paw, Heart, Clock } from "@/components/icons";
 
-const stillWaiting = dogsByWaiting.slice(0, 4);
+const stillWaiting = ["sdc-iris", "sdc-lulu", "sdc-alfie"]
+  .map(dogById)
+  .filter(Boolean);
 
 const steps = [
   {
@@ -81,7 +83,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {stillWaiting.map((dog) => (
               <DogCard key={dog.id} dog={dog} shelter={shelterById(dog.shelterId)} />
             ))}
